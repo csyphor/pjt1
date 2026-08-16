@@ -24,7 +24,7 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 ### 1. Data Acquisition ✅
 - **Dataset Downloaded**: OpenNeuro ds004302
 - **Size**: 9.1 GB raw BIDS data
-- **Subjects**: 71 subject directories (60 participants + derivatives)
+- **Subjects**: 71 participants total
 - **Validation**: BIDS-compliant structure verified
 
 ### 2. Preprocessing Pipeline Setup ✅
@@ -38,7 +38,7 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 
 ### 3. Preprocessing Execution ✅
 - **Status**: **COMPLETE**
-- **Subjects Processed**: 60 participants
+- **Subjects Processed**: 71 participants
 - **Output Space**: MNI152NLin2009cAsym:res-2 + native anatomical
 - **Processing Time**: ~6 hours (parallel execution)
 - **Output Size**: 111 GB preprocessed data
@@ -233,11 +233,12 @@ Metrics = {
 ## 📊 Dataset Summary
 
 ### Participant Demographics
-| Group | Count | Age Range | Sex | IQ Range |
-|-------|-------|-----------|-----|----------|
-| HC | 25 | 20-64 | M/F | 71-114 |
-| AVH- | 25 | 31-61 | M/F | 83-114 |
-| AVH+ | 10 | 44-XX | M/F | 93-XX |
+| Group | Count | Age Range | Sex | IQ Range | PSYRATS |
+|-------|-------|-----------|-----|----------|---------|
+| HC | 25 | 20-64 | M/F | 71-114 | n/a |
+| AVH- | 23 | 31-61 | M/F | 83-114 | 0 |
+| AVH+ | 23 | 44-XX | M/F | 93-XX | 11-34 |
+| **Total** | **71** | | | | |
 
 ### Task Design
 - **Conditions**: Word lists, Sentence lists, Reversed speech
@@ -344,7 +345,7 @@ Metrics = {
 - ✅ Created PROJECT_STATUS.md
 - ✅ Documented all preprocessing completion
 
-### 2026-08-02
+### 2026-08-0271
 - ✅ Completed fMRIPrep preprocessing for all 60 subjects
 - ✅ Generated 426 HTML quality reports
 - ✅ Saved processing logs

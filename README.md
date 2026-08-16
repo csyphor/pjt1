@@ -20,11 +20,12 @@ This project focuses on preprocessing and quality analysis of fMRI data from a s
 - **Note**: First 5 volumes (10 seconds) discarded before analysis
 
 ### Participants
-- **Total Subjects**: 60 participants
+- **Total Subjects**: 71 participants
 - **Groups**:
   - HC (Healthy Controls): 25 subjects
-  - AVH- (Schizophrenia without auditory hallucinations): 25 subjects
-  - AVH+ (Schizophrenia with auditory hallucinations): 10 subjects
+  - AVH- (Schizophrenia without auditory hallucinations): 23 subjects
+  - AVH+ (Schizophrenia with auditory hallucinations): 23 subjects
+- **Total Patients with Schizophrenia**: 46 (AVH- + AVH+)
 - **Demographics**: Age, sex, IQ, PSYRATS scores recorded
 
 ---
@@ -138,7 +139,7 @@ fMRI/
 ## 📊 Current Status
 
 ### Preprocessing Status
-- ✅ **Completed**: All 60 subjects preprocessed
+- ✅ **Completed**: All 71 subjects preprocessed
 - ✅ **Reports Generated**: 426 HTML quality control reports
 - ✅ **Output Space**: MNI152NLin2009cAsym:res-2 + native anatomical
 - ✅ **Logs**: Complete processing logs in `logs/`
