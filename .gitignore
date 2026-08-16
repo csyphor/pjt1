@@ -1,0 +1,159 @@
+# ============================================
+# fMRI Preprocessing Project .gitignore
+# ============================================
+
+# --------------------------------------------
+# LARGE DATA DIRECTORIES (260GB+ total)
+# --------------------------------------------
+# Raw BIDS dataset from OpenNeuro
+ds004302-download/
+
+# fMRIPrep working directory (intermediate files)
+work/
+
+# fMRIPrep output directory (preprocessed data)
+output/
+
+# Quality analysis outputs
+quality_analysis/
+
+# --------------------------------------------
+# LOG FILES
+# --------------------------------------------
+logs/
+*.log
+
+# --------------------------------------------
+# PYTHON-GENERATED FILES
+# --------------------------------------------
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.egg
+
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# --------------------------------------------
+# JUPYTER NOTEBOOKS
+# --------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --------------------------------------------
+# TESTING & COVERAGE
+# --------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# --------------------------------------------
+# NEUROIMAGING FILE FORMATS
+# --------------------------------------------
+# NIfTI files
+*.nii
+*.nii.gz
+
+# FreeSurfer files
+*.mgh
+*.mgz
+
+# Other neuroimaging formats
+*.nrrd
+*.mnc
+*.mnc.gz
+*.head
+*.brik
+*.brik.gz
+
+# Singularity containers
+*.sif
+*.simg
+
+# --------------------------------------------
+# EDITOR & IDE FILES
+# --------------------------------------------
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# --------------------------------------------
+# OPERATING SYSTEM FILES
+# --------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# --------------------------------------------
+# BACKUP & TEMPORARY FILES
+# --------------------------------------------
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# --------------------------------------------
+# MISCELLANEOUS
+# --------------------------------------------
+# Environment variables
+.env
+.env.local
+
+# Credentials and secrets
+*_credentials*
+*_secrets*
+*.pem
+*.key
+
+# Documentation builds
+docs/_build/
+site/
+
+# Package files
+*.deb
+*.rpm
