@@ -2,7 +2,7 @@
 
 ## 📋 Project Overview
 
-This project focuses on preprocessing and quality analysis of fMRI data from a schizophrenia study investigating speech perception and auditory hallucinations.
+This project focuses on preprocessing fMRI data from a schizophrenia study investigating speech perception and auditory hallucinations. Quality analysis framework has been implemented for assessing preprocessing outputs. Future work will involve machine learning model development (approach TBD).
 
 ### Dataset Information
 - **Source**: OpenNeuro Dataset ds004302
@@ -149,6 +149,10 @@ fMRI/
 - ✅ **Metrics**: SNR, tSNR, PSNR, SSIM computation ready
 - ✅ **Visualizations**: Publication-quality plotting configured
 - ⏳ **Execution**: Ready to run on preprocessed data
+
+### Future Work
+- ⏳ **Model Development**: Machine learning approaches (TBD)
+- ⏳ **Analysis**: To be determined based on research direction
 
 ### Data Integrity
 - ✅ **Backup**: Scripts backed up to `scripts_backup_20260816.zip`

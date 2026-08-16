@@ -9,13 +9,13 @@
 ## 📊 Executive Summary
 
 ### Project Goal
-Preprocess fMRI data from a schizophrenia study (speech perception & auditory hallucinations) and perform comprehensive quality analysis.
+Preprocess fMRI data from a schizophrenia study (speech perception & auditory hallucinations). Quality analysis framework implemented for preprocessing assessment.
 
 ### Current Phase
 ✅ **Phase 1: Data Acquisition** - Complete
 ✅ **Phase 2: Preprocessing** - Complete  
 ⏳ **Phase 3: Quality Analysis** - Ready to Execute
-⏳ **Phase 4: Statistical Analysis** - Pending
+⏳ **Phase 4: Model Development** - Future work (approach TBD)
 
 ---
 
@@ -134,24 +134,23 @@ cd ~/fMRI
 
 **Estimated Time**: 2-4 hours (depending on metrics selected)
 
-### 2. Statistical Analysis ⏳
-**Status**: Not started
+### 2. Model Development ⏳
+**Status**: Research phase
 **Dependencies**: Quality analysis completion
 
-**Planned Analyses**:
-- Group comparisons (HC vs AVH- vs AVH+)
-- Quality metric distributions
-- Outlier detection
-- Correlation with clinical measures
+**Approach**: TBD
+- Machine learning models under consideration
+- Graph-based approaches (GNN) being explored
+- Research ongoing to determine optimal approach
 
-### 3. Publication-Ready Outputs ⏳
+### 3. Analysis & Outputs ⏳
 **Status**: Not started
-**Dependencies**: Quality analysis + statistical analysis
+**Dependencies**: Model development
 
-**Needed**:
-- Summary figures
-- Tables for manuscript
-- Supplementary materials
+**Future Work**:
+- Model training and validation
+- Results interpretation
+- Publication materials
 
 ---
 
@@ -282,24 +281,23 @@ Metrics = {
 
 2. **Review Quality Outputs** ⏳
    - Check `quality_analysis/` directory
-   - Review statistical summaries
-   - Identify outliers
+   - Review quality metrics
+   - Identify any preprocessing issues
 
-3. **Statistical Analysis** ⏳
-   - Group comparisons
-   - Clinical correlations
-   - Outlier investigation
+3. **Research Model Approaches** ⏳
+   - Evaluate GNN-based approaches
+   - Explore other ML methods
+   - Determine optimal architecture
 
 4. **Documentation Update** ⏳
    - Add quality analysis results
    - Update this status file
-   - Create summary figures
 
 ### Future Work
-- [ ] Surface-based analysis (if needed)
-- [ ] Connectivity analysis
-- [ ] Group-level statistics
-- [ ] Manuscript preparation
+- [ ] Model architecture selection
+- [ ] Model training and validation
+- [ ] Results analysis
+- [ ] Publication preparation
 
 ---
 
