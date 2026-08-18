@@ -1,9 +1,11 @@
 #!/bin/bash
-# Monitor faculty metrics processing progress
+# Monitor signal quality metrics processing progress
 
-LOG_FILE="/root/fMRI/faculty_metrics_rerun.log"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+LOG_FILE="$PROJECT_ROOT/logs/signal_quality_metrics_rerun.log"
 
-echo "Monitoring faculty metrics processing..."
+echo "Monitoring signal quality metrics processing..."
 echo "Log file: $LOG_FILE"
 echo ""
 

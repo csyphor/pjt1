@@ -1,8 +1,8 @@
 # Project Status Report
 
-**Last Updated**: August 16, 2026
+**Last Updated**: August 18, 2026
 **Project**: fMRI Preprocessing & Quality Analysis
-**Status**: Preprocessing Complete, Quality Analysis Complete
+**Status**: Preprocessing Complete, Quality Analysis Complete, Repository Organized
 
 ---
 
@@ -74,7 +74,7 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 - **Output Formats**: PNG (300/600 DPI), PDF, SVG
 - **Parallel Processing**: Multiprocessing enabled
 
-#### B. Faculty-Requested Metrics (`faculty_requested_metrics.py`)
+#### B. Signal Quality Metrics (`scripts/python/signal_quality_metrics.py`)
 - **Status**: Implemented and tested
 - **Metrics**:
   1. **SNR** (Signal-to-Noise Ratio)
@@ -122,14 +122,26 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 
 **Outputs Generated**:
 - Quality metrics CSV files (`quality_metrics.csv`)
-- Faculty-requested metrics (`faculty_requested_metrics.csv`)
+- Signal quality metrics (`signal_quality_metrics.csv`)
 - Statistical summaries (`descriptive_statistics.csv`, `comparison_statistics.csv`)
 - Individual subject metrics (71 JSON files)
 - Visualization plots
 
 **Location**: `quality_analysis/` directory (32 MB)
 
-### 2. Model Development ⏳
+### 2. Repository Organization ✅
+**Status**: Complete (August 18, 2026)
+**Action Required**: None - already organized
+
+**Changes Made**:
+- Scripts organized into `scripts/python/` and `scripts/shell/`
+- Documentation organized into `docs/`
+- Logs consolidated in `logs/`
+- Faculty metrics renamed to signal quality metrics
+- All references updated throughout codebase
+- Comprehensive documentation created
+
+### 3. Model Development ⏳
 **Status**: Research phase
 **Dependencies**: Quality analysis complete
 
@@ -138,7 +150,7 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 - Graph-based approaches (GNN) being explored
 - Research ongoing to determine optimal approach
 
-### 3. Analysis & Outputs ⏳
+### 4. Analysis & Outputs ⏳
 **Status**: Not started
 **Dependencies**: Model development
 
@@ -154,13 +166,13 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 ### Scripts (Tracked in Git)
 | File | Purpose | Lines | Status |
 |------|---------|-------|--------|
-| `PreProcessMultiSub.sh` | Parallel fMRIPrep execution | 118 | ✅ Complete |
-| `fmri_quality_metrics.py` | Comprehensive QC framework | 1,200+ | ✅ Complete |
-| `faculty_requested_metrics.py` | SNR/tSNR/PSNR/SSIM metrics | 1,500+ | ✅ Complete |
-| `advanced_visualizations.py` | Publication visualizations | 500+ | ✅ Complete |
-| `monitor_progress.sh` | Real-time monitoring | 50 | ✅ Complete |
-| `run_quality_analysis.sh` | Pipeline runner | 80 | ✅ Complete |
-| `test_fs.sh` | FreeSurfer test | 10 | ✅ Complete |
+| `scripts/shell/PreProcessMultiSub.sh` | Parallel fMRIPrep execution | 118 | ✅ Complete |
+| `scripts/python/fmri_quality_metrics.py` | Comprehensive QC framework | 1,200+ | ✅ Complete |
+| `scripts/python/signal_quality_metrics.py` | SNR/tSNR/PSNR/SSIM metrics | 1,500+ | ✅ Complete |
+| `scripts/python/advanced_visualizations.py` | Publication visualizations | 500+ | ✅ Complete |
+| `scripts/shell/monitor_progress.sh` | Real-time monitoring | 50 | ✅ Complete |
+| `scripts/shell/run_quality_analysis.sh` | Pipeline runner | 80 | ✅ Complete |
+| `scripts/shell/test_fs.sh` | FreeSurfer test | 10 | ✅ Complete |
 
 ### Data (Gitignored)
 | Directory | Size | Contents | Status |
@@ -175,7 +187,8 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 | File | Purpose | Status |
 |------|---------|--------|
 | `README.md` | Project overview | ✅ Created |
-| `PROJECT_STATUS.md` | This file | ✅ Created |
+| `docs/PROJECT_STATUS.md` | This file | ✅ Created |
+| `docs/TECHNICAL_DOCS.md` | Technical documentation | ✅ Created |
 | `requirements.txt` | Python dependencies | ✅ Complete |
 | `license.txt` | FreeSurfer license | ✅ Present |
 
@@ -260,33 +273,48 @@ Metrics = {
 - **Resolution**: Comprehensive .gitignore
 - **Status**: ✅ Resolved
 
+### Issue 4: Repository Organization
+- **Problem**: Scripts and documentation scattered in root directory
+- **Resolution**: Organized into `scripts/` and `docs/` directories
+- **Status**: ✅ Resolved (August 18, 2026)
+
+### Issue 5: Naming Consistency
+- **Problem**: "Faculty metrics" naming was unclear and unprofessional
+- **Resolution**: Renamed to "signal quality metrics" throughout codebase
+- **Status**: ✅ Resolved (August 18, 2026)
+
 ---
 
 ## 📈 Next Steps
 
 ### Immediate Actions (Priority Order)
 
-1. **Run Quality Analysis** ⏳
-   ```bash
-   cd ~/fMRI
-   ./run_quality_analysis.sh
-   ```
-   - Expected duration: 2-4 hours
-   - Monitor with: `tail -f faculty_metrics.log`
+1. **Quality Analysis** ✅ **COMPLETE**
+   - Status: Already executed (August 11, 2026)
+   - Location: `quality_analysis/` directory
+   - All metrics computed and visualizations generated
 
-2. **Review Quality Outputs** ⏳
+2. **Repository Organization** ✅ **COMPLETE**
+   - Status: Fully organized (August 18, 2026)
+   - Scripts in `scripts/python/` and `scripts/shell/`
+   - Documentation in `docs/`
+   - All references updated and consistent
+
+3. **Review Quality Outputs** ⏳
    - Check `quality_analysis/` directory
    - Review quality metrics
    - Identify any preprocessing issues
+   - Validate results
 
-3. **Research Model Approaches** ⏳
+4. **Research Model Approaches** ⏳
    - Evaluate GNN-based approaches
    - Explore other ML methods
    - Determine optimal architecture
 
-4. **Documentation Update** ⏳
+5. **Documentation Update** ⏳
    - Add quality analysis results
    - Update this status file
+   - Document model development approach
 
 ### Future Work
 - [ ] Model architecture selection
@@ -328,6 +356,28 @@ Metrics = {
 ---
 
 ## 📝 Change Log
+
+### 2026-08-18
+- ✅ **Repository Organization**: Reorganized into proper structure
+  - Created `scripts/python/` and `scripts/shell/` directories
+  - Moved all Python scripts to `scripts/python/`
+  - Moved all shell scripts to `scripts/shell/`
+  - Created `docs/` directory for documentation
+  - Moved all documentation files to `docs/`
+- ✅ **Renaming**: Updated "faculty metrics" to "signal quality metrics"
+  - Renamed `faculty_requested_metrics.py` → `signal_quality_metrics.py`
+  - Renamed `FacultyRequestedMetrics` class → `SignalQualityMetrics`
+  - Renamed output directory `faculty_metrics/` → `signal_quality/`
+  - Renamed log file `faculty_metrics.log` → `signal_quality_metrics.log`
+  - Updated all references throughout codebase
+- ✅ **Cleanup**: Removed unnecessary files
+  - Removed `node_modules/`, `package.json`, `package-lock.json`
+  - Removed `.python-version`, `.orchestra-skills.json`
+- ✅ **Documentation**: Created comprehensive documentation
+  - Created `REPOSITORY_ORGANIZATION.md`
+  - Created `RENAMING_SUMMARY.md`
+  - Created `STATUS_CHECK.md`
+  - Updated all existing documentation with new paths
 
 ### 2026-08-16
 - ✅ Created comprehensive .gitignore

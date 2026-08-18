@@ -9,9 +9,11 @@ echo "Setup and Execution Script"
 echo "=========================================="
 
 # Configuration
-RAW_DIR="/root/fMRI/ds004302-download"
-PREPROC_DIR="/root/fMRI/output"
-OUTPUT_DIR="/root/fMRI/quality_analysis"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+RAW_DIR="$PROJECT_ROOT/ds004302-download"
+PREPROC_DIR="$PROJECT_ROOT/output"
+OUTPUT_DIR="$PROJECT_ROOT/quality_analysis"
 
 # Check if directories exist
 if [ ! -d "$RAW_DIR" ]; then
@@ -40,7 +42,7 @@ echo "Installing Python dependencies..."
 echo "=========================================="
 
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r "$PROJECT_ROOT/requirements.txt"
 
 echo ""
 echo "Dependencies installed successfully!"
@@ -51,7 +53,7 @@ echo "=========================================="
 echo "Running Quality Metrics Analysis..."
 echo "=========================================="
 
-python fmri_quality_metrics.py
+python "$SCRIPT_DIR/../python/fmri_quality_metrics.py"
 
 # Check if analysis completed successfully
 if [ $? -eq 0 ]; then
@@ -74,7 +76,7 @@ if [ $? -eq 0 ]; then
         echo "=========================================="
         echo "Generating Advanced Visualizations..."
         echo "=========================================="
-        python advanced_visualizations.py
+        python "$SCRIPT_DIR/../python/advanced_visualizations.py"
         echo ""
         echo "Advanced visualizations complete!"
     fi

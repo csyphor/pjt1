@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Faculty-Requested fMRI Quality Metrics: SNR, PSNR, tSNR, SSIM
+Signal Quality Metrics for fMRI: SNR, PSNR, tSNR, SSIM
 
 This script computes scientifically valid quality metrics by properly aligning
 raw and preprocessed fMRI data before comparison.
@@ -44,16 +44,16 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('faculty_metrics.log'),
+        logging.FileHandler('signal_quality_metrics.log'),
         logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger(__name__)
 
 
-class FacultyRequestedMetrics:
+class SignalQualityMetrics:
     """
-    Compute faculty-requested metrics with proper spatial alignment.
+    Compute signal quality metrics with proper spatial alignment.
     
     Metrics:
     1. SNR: Signal-to-Noise Ratio (Air method)
@@ -94,7 +94,7 @@ class FacultyRequestedMetrics:
         self.ants_available = self._check_ants()
         
         logger.info("="*80)
-        logger.info("Faculty-Requested Metrics Framework Initialized")
+        logger.info("Signal Quality Metrics Framework Initialized")
         logger.info("="*80)
         logger.info(f"Raw data: {self.raw_dir}")
         logger.info(f"Preprocessed data: {self.preproc_dir}")
@@ -1157,7 +1157,7 @@ class FacultyRequestedMetrics:
         df = pd.DataFrame(results_list)
         
         # Save results
-        output_file = self.output_dir / 'faculty_requested_metrics.csv'
+        output_file = self.output_dir / 'signal_quality_metrics.csv'
         df.to_csv(output_file, index=False)
         logger.info(f"\n✓ Results saved to {output_file}")
         
@@ -1237,7 +1237,7 @@ def main():
     
     # Parse arguments
     parser = argparse.ArgumentParser(
-        description='Faculty-Requested fMRI Quality Metrics',
+        description='Signal Quality Metrics for fMRI',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
@@ -1261,10 +1261,10 @@ def main():
     # Paths
     raw_dir = Path('/root/fMRI/ds004302-download')
     preproc_dir = Path('/root/fMRI/output')
-    output_dir = Path('/root/fMRI/quality_analysis/faculty_metrics')
+    output_dir = Path('/root/fMRI/quality_analysis/signal_quality')
     
     # Initialize
-    analyzer = FacultyRequestedMetrics(
+    analyzer = SignalQualityMetrics(
         raw_dir=raw_dir,
         preproc_dir=preproc_dir,
         output_dir=output_dir
@@ -1357,7 +1357,7 @@ def main():
             
             # Update cumulative CSV
             df = pd.DataFrame(results_list)
-            output_file = output_dir / 'faculty_requested_metrics.csv'
+            output_file = output_dir / 'signal_quality_metrics.csv'
             df.to_csv(output_file, index=False)
         
         logger.info(f"\n✓ All results saved to {output_dir}")

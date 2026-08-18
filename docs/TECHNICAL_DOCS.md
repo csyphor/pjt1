@@ -267,7 +267,7 @@ FMRIQualityMetrics
 ├── generate_visualizations()
 └── save_results()
 
-FacultyRequestedMetrics
+SignalQualityMetrics
 ├── __init__()
 ├── align_images()
 ├── compute_snr_air()
@@ -420,7 +420,7 @@ assert abs(computed_tsnr - 10) < 0.5
 #### End-to-End Pipeline
 ```bash
 # Test on single subject
-python faculty_requested_metrics.py \
+python signal_quality_metrics.py \
   --raw_dir ds004302-download \
   --preproc_dir output \
   --output_dir test_output \

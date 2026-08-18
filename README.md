@@ -37,21 +37,27 @@ fMRI/
 ├── ds004302-download/          # Raw BIDS dataset (9.1GB) [gitignored]
 ├── output/                     # fMRIPrep preprocessed data (111GB) [gitignored]
 ├── work/                       # fMRIPrep working directory (149GB) [gitignored]
-├── logs/                       # Processing logs (17MB) [gitignored]
+├── logs/                       # Processing logs [gitignored]
 ├── quality_analysis/           # Quality metrics outputs (32MB) [gitignored]
 │
-├── PreProcessMultiSub.sh       # Parallel fMRIPrep preprocessing script
-├── fmri_quality_metrics.py     # Comprehensive quality metrics framework
-├── faculty_requested_metrics.py # SNR, tSNR, PSNR, SSIM metrics
-├── advanced_visualizations.py   # Publication-quality visualizations
-├── monitor_progress.sh         # Real-time preprocessing monitor
-├── run_quality_analysis.sh     # Quality analysis pipeline runner
-├── test_fs.sh                  # FreeSurfer configuration test
+├── scripts/                    # All executable scripts
+│   ├── python/                 # Python analysis scripts
+│   │   ├── fmri_quality_metrics.py     # Comprehensive quality metrics framework
+│   │   ├── signal_quality_metrics.py # SNR, tSNR, PSNR, SSIM metrics
+│   │   └── advanced_visualizations.py   # Publication-quality visualizations
+│   └── shell/                 # Shell scripts
+│       ├── PreProcessMultiSub.sh       # Parallel fMRIPrep preprocessing script
+│       ├── run_quality_analysis.sh     # Quality analysis pipeline runner
+│       ├── monitor_progress.sh         # Real-time preprocessing monitor
+│       └── test_fs.sh                  # FreeSurfer configuration test
+│
+├── docs/                       # Documentation
+│   ├── PROJECT_STATUS.md       # Detailed status documentation
+│   └── TECHNICAL_DOCS.md       # Technical documentation
 │
 ├── requirements.txt            # Python dependencies
 ├── license.txt                 # FreeSurfer license
-├── README.md                   # This file
-└── PROJECT_STATUS.md           # Detailed status documentation
+└── README.md                   # This file
 ```
 
 ---
@@ -77,10 +83,10 @@ fMRI/
 
 **Usage**:
 ```bash
-./PreProcessMultiSub.sh
+./scripts/shell/PreProcessMultiSub.sh
 ```
 
-### 2. Quality Metrics Framework (`fmri_quality_metrics.py`)
+### 2. Quality Metrics Framework (`scripts/python/fmri_quality_metrics.py`)
 
 **Purpose**: Comprehensive pre/post preprocessing quality assessment
 
@@ -98,9 +104,9 @@ fMRI/
 - Statistical analysis
 - Before/after comparison
 
-### 3. Faculty-Requested Metrics (`faculty_requested_metrics.py`)
+### 3. Signal Quality Metrics (`scripts/python/signal_quality_metrics.py`)
 
-**Purpose**: Specific quality metrics requested by research faculty
+**Purpose**: Comprehensive signal quality metrics for fMRI data
 
 **Metrics**:
 1. **SNR**: Signal-to-Noise Ratio (Air method)
@@ -124,7 +130,7 @@ fMRI/
 - Proper brain masking
 - ANTs-based spatial alignment (if available)
 
-### 4. Advanced Visualizations (`advanced_visualizations.py`)
+### 4. Advanced Visualizations (`scripts/python/advanced_visualizations.py`)
 
 **Purpose**: Publication-ready quality visualizations
 
@@ -177,12 +183,12 @@ pip install -r requirements.txt
 
 ### Run Quality Analysis
 ```bash
-./run_quality_analysis.sh
+./scripts/shell/run_quality_analysis.sh
 ```
 
 ### Monitor Preprocessing
 ```bash
-./monitor_progress.sh
+./scripts/shell/monitor_progress.sh
 ```
 
 ---
