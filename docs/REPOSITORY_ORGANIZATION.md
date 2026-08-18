@@ -26,8 +26,11 @@ fMRI/
 │
 ├── docs/                       # Documentation (NEW)
 │   ├── PROJECT_STATUS.md
-│   ├── TECHNICAL_DOCS.md
-│   └── REPOSITORY_ORGANIZATION.md
+│   ├── PROJECT_STATUS_UPDATE.md
+│   ├── RENAMING_SUMMARY.md
+│   ├── REPOSITORY_ORGANIZATION.md
+│   ├── STATUS_CHECK.md
+│   └── TECHNICAL_DOCS.md
 │
 ├── logs/                       # Processing logs
 │   ├── fmriprep_numa0.log
@@ -35,9 +38,152 @@ fMRI/
 │   └── signal_quality_metrics.log
 │
 ├── ds004302-download/          # Raw BIDS data [gitignored]
-├── output/                     # Preprocessed data [gitignored]
-├── work/                       # Working directory [gitignored]
-├── quality_analysis/           # Quality outputs [gitignored]
+│   ├── .datalad/
+│   ├── .gitattributes
+│   ├── CHANGES
+│   ├── README
+│   ├── dataset_description.json
+│   ├── participants.json
+│   ├── participants.tsv
+│   ├── task-speech_bold.json
+│   ├── task-speech_events.json
+│   ├── task-speech_events.tsv
+│   ├── sub-01/                 # Example subject (similar for all 71 subjects)
+│   │   ├── anat/
+│   │   │   └── sub-01_T1w.nii.gz
+│   │   └── func/
+│   │       └── sub-01_task-speech_bold.nii.gz
+│   ├── sub-02/                 # Example subject 2
+│   │   ├── anat/
+│   │   │   └── sub-02_T1w.nii.gz
+│   │   └── func/
+│   │       └── sub-02_task-speech_bold.nii.gz
+│   └── sub-03/ through sub-77/ # Remaining 69 subjects (same structure)
+│
+├── output/                     # fMRIPrep preprocessed data [gitignored]
+│   ├── .bidsignore
+│   ├── README.md
+│   ├── dataset_description.json
+│   ├── logs/
+│   ├── sub-01.html             # Quality control HTML report
+│   ├── sub-01/                 # Example subject (similar for all 71 subjects)
+│   │   ├── anat/               # Anatomical preprocessing outputs
+│   │   │   ├── sub-01_desc-brain_mask.json
+│   │   │   ├── sub-01_desc-brain_mask.nii.gz
+│   │   │   ├── sub-01_desc-preproc_T1w.json
+│   │   │   ├── sub-01_desc-preproc_T1w.nii.gz
+│   │   │   ├── sub-01_dseg.nii.gz
+│   │   │   ├── sub-01_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+│   │   │   ├── sub-01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+│   │   │   ├── sub-01_label-CSF_probseg.nii.gz
+│   │   │   ├── sub-01_label-GM_probseg.nii.gz
+│   │   │   ├── sub-01_label-WM_probseg.nii.gz
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.json
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_desc-preproc_T1w.json
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_desc-preproc_T1w.nii.gz
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_dseg.json
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_dseg.nii.gz
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_label-CSF_probseg.nii.gz
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_res-2_label-GM_probseg.nii.gz
+│   │   │   └── sub-01_space-MNI152NLin2009cAsym_res-2_label-WM_probseg.nii.gz
+│   │   ├── func/               # Functional preprocessing outputs
+│   │   │   ├── sub-01_task-speech_desc-brain_mask.json
+│   │   │   ├── sub-01_task-speech_desc-brain_mask.nii.gz
+│   │   │   ├── sub-01_task-speech_desc-confounds_timeseries.json
+│   │   │   ├── sub-01_task-speech_desc-confounds_timeseries.tsv
+│   │   │   ├── sub-01_task-speech_desc-coreg_boldref.json
+│   │   │   ├── sub-01_task-speech_desc-coreg_boldref.nii.gz
+│   │   │   ├── sub-01_task-speech_desc-hmc_boldref.json
+│   │   │   ├── sub-01_task-speech_desc-hmc_boldref.nii.gz
+│   │   │   ├── sub-01_task-speech_from-boldref_to-T1w_mode-image_desc-coreg_xfm.json
+│   │   │   ├── sub-01_task-speech_from-boldref_to-T1w_mode-image_desc-coreg_xfm.txt
+│   │   │   ├── sub-01_task-speech_from-orig_to-boldref_mode-image_desc-hmc_xfm.json
+│   │   │   ├── sub-01_task-speech_from-orig_to-boldref_mode-image_desc-hmc_xfm.txt
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_boldref.json
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_boldref.nii.gz
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.json
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.json
+│   │   │   ├── sub-01_task-speech_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz
+│   │   │   ├── sub-01_task-speech_space-T1w_boldref.json
+│   │   │   ├── sub-01_task-speech_space-T1w_boldref.nii.gz
+│   │   │   ├── sub-01_task-speech_space-T1w_desc-brain_mask.json
+│   │   │   ├── sub-01_task-speech_space-T1w_desc-brain_mask.nii.gz
+│   │   │   ├── sub-01_task-speech_space-T1w_desc-preproc_bold.json
+│   │   │   └── sub-01_task-speech_space-T1w_desc-preproc_bold.nii.gz
+│   │   ├── figures/            # Quality control visualizations
+│   │   │   ├── sub-01_desc-about_T1w.html
+│   │   │   ├── sub-01_desc-conform_T1w.html
+│   │   │   ├── sub-01_desc-summary_T1w.html
+│   │   │   ├── sub-01_dseg.svg
+│   │   │   ├── sub-01_space-MNI152NLin2009cAsym_T1w.svg
+│   │   │   ├── sub-01_task-speech_desc-carpetplot_bold.svg
+│   │   │   ├── sub-01_task-speech_desc-compcorvar_bold.svg
+│   │   │   ├── sub-01_task-speech_desc-confoundcorr_bold.svg
+│   │   │   ├── sub-01_task-speech_desc-coreg_bold.svg
+│   │   │   ├── sub-01_task-speech_desc-rois_bold.svg
+│   │   │   ├── sub-01_task-speech_desc-summary_bold.html
+│   │   │   └── sub-01_task-speech_desc-validation_bold.html
+│   │   └── log/                # Processing logs
+│   │       └── 20260801-194934_9ace174b-6f77-415c-b853-59994a4fada2/
+│   ├── sub-02.html             # Subject 02 QC report
+│   ├── sub-02/                 # Subject 02 (same structure as sub-01)
+│   │   ├── anat/               # Same files as sub-01 (with sub-02 prefix)
+│   │   ├── func/               # Same files as sub-01 (with sub-02 prefix)
+│   │   ├── figures/            # Same files as sub-01 (with sub-02 prefix)
+│   │   └── log/                # Processing logs
+│   └── sub-03/ through sub-77/ # Remaining 69 subjects (same structure)
+│
+├── work/                       # fMRIPrep working directory [gitignored]
+│   ├── numa0/                  # NUMA node 0 processing
+│   └── numa1/                  # NUMA node 1 processing
+│
+├── quality_analysis/           # Quality metrics outputs [gitignored]
+│   ├── metrics/
+│   │   └── quality_metrics.csv
+│   ├── plots/
+│   │   ├── dpi300/            # 300 DPI publication plots
+│   │   │   ├── bar_chart_comparison.png
+│   │   │   ├── bland_altman_plots.png
+│   │   │   ├── cdf_plots.png
+│   │   │   ├── correlation_heatmap.png
+│   │   │   ├── global_mean_boxplot.png
+│   │   │   ├── global_mean_violin.png
+│   │   │   ├── line_chart_progression.png
+│   │   │   ├── mean_signal_boxplot.png
+│   │   │   ├── mean_signal_violin.png
+│   │   │   ├── metrics_density.png
+│   │   │   ├── metrics_histograms.png
+│   │   │   ├── motion_summary.png
+│   │   │   ├── motion_trace.png
+│   │   │   ├── pairwise_correlation_significance.png
+│   │   │   ├── qq_plots.png
+│   │   │   ├── radar_chart_comparison.png
+│   │   │   ├── raw_vs_preproc_scatter.png
+│   │   │   ├── similarity_distributions.png
+│   │   │   ├── snr_boxplot.png
+│   │   │   ├── snr_violin.png
+│   │   │   ├── subject_improvement.png
+│   │   │   ├── temporal_metrics.png
+│   │   │   ├── tsnr_boxplot.png
+│   │   │   ├── tsnr_violin.png
+│   │   │   └── violin_boxplot_combined.png
+│   │   ├── dpi600/            # 600 DPI publication plots (same files)
+│   │   ├── pdf/               # PDF format plots (same files)
+│   │   └── svg/               # SVG format plots (same files)
+│   ├── signal_quality/         # Signal quality metrics outputs
+│   │   ├── final_summary.json
+│   │   ├── signal_quality_metrics.csv
+│   │   ├── sub-01_metrics.json
+│   │   ├── sub-02_metrics.json
+│   │   ├── sub-03_metrics.json
+│   │   ├── ... (71 individual subject JSON files)
+│   │   ├── sub-77_metrics.json
+│   │   └── summary_statistics.json
+│   └── statistics/
+│       ├── comparison_statistics.csv
+│       └── descriptive_statistics.csv
 │
 ├── requirements.txt            # Python dependencies
 ├── license.txt                # FreeSurfer license
