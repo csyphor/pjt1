@@ -2,7 +2,7 @@
 
 **Last Updated**: August 16, 2026
 **Project**: fMRI Preprocessing & Quality Analysis
-**Status**: Preprocessing Complete, Quality Analysis Ready
+**Status**: Preprocessing Complete, Quality Analysis Complete
 
 ---
 
@@ -14,7 +14,7 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 ### Current Phase
 ✅ **Phase 1: Data Acquisition** - Complete
 ✅ **Phase 2: Preprocessing** - Complete  
-⏳ **Phase 3: Quality Analysis** - Ready to Execute
+✅ **Phase 3: Quality Analysis** - Complete 
 ⏳ **Phase 4: Model Development** - Future work (approach TBD)
 
 ---
@@ -116,27 +116,22 @@ Preprocess fMRI data from a schizophrenia study (speech perception & auditory ha
 
 ## 📋 What's Pending
 
-### 1. Quality Analysis Execution ⏳
-**Status**: Ready to run
-**Action Required**: Execute quality metrics on preprocessed data
+### 1. Quality Analysis Execution ✅
+**Status**: Complete (August 11, 2026)
+**Action Required**: None - already executed
 
-**To Execute**:
-```bash
-cd ~/fMRI
-./run_quality_analysis.sh
-```
-
-**Expected Outputs**:
-- Quality metrics CSV files
-- Statistical summaries
+**Outputs Generated**:
+- Quality metrics CSV files (`quality_metrics.csv`)
+- Faculty-requested metrics (`faculty_requested_metrics.csv`)
+- Statistical summaries (`descriptive_statistics.csv`, `comparison_statistics.csv`)
+- Individual subject metrics (71 JSON files)
 - Visualization plots
-- Comparison reports
 
-**Estimated Time**: 2-4 hours (depending on metrics selected)
+**Location**: `quality_analysis/` directory (32 MB)
 
 ### 2. Model Development ⏳
 **Status**: Research phase
-**Dependencies**: Quality analysis completion
+**Dependencies**: Quality analysis complete
 
 **Approach**: TBD
 - Machine learning models under consideration
